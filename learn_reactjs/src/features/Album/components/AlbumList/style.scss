@@ -1,0 +1,13 @@
+.album-list {
+    display : flex;
+    flex-flow: row nowrap; 
+    /*bang voi justify-content : center*/
+    list-style-type: none;
+    padding: 10;
+    margin : 0 -20px;
+
+    &>li{
+        padding: 0 20px;
+        
+    }
+}
