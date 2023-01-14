@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TodoItem = ({ todo }) => {
+const TodoItem = ({ todo,deleteTodo }) => {
     
     const style = {
         background: 'rgb(240,240,240)',
@@ -8,7 +8,7 @@ const TodoItem = ({ todo }) => {
     }
 
   return (
-    <li style={style}>{todo.title}</li>
+    <li onClick={()=> {deleteTodo(todo.id)}} style={style}>{todo.title}</li>
   )
 }
 
