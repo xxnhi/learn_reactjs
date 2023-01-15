@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect } from 'react'
 import { useState, createContext} from 'react'
 
 export const AuthContext = createContext()
@@ -11,6 +12,10 @@ const AuthContextProvider = ({ children }) => {
         setAuthentication(!isAuthenticated)
     }
 
+    //useEffect 
+    useEffect(() => {
+        alert(isAuthenticated ? 'Login Successful':'You are logged out. Please login to see todos.')
+    },[isAuthenticated])
     //context data
     const authContextData = {
         isAuthenticated,

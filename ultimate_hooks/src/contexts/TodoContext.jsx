@@ -1,4 +1,4 @@
-import React,{createContext, useState} from 'react'
+import React,{createContext, useEffect, useState} from 'react'
 
 export const TodoContext = createContext()
 
@@ -10,6 +10,19 @@ const TodoContextProvider = ({children}) => {
     { id: 3, title: 'viec 3' },
         
   ])
+    
+    //useEffect
+    useEffect(() => {
+        console.log('getting todos')
+        const todos = localStorage.getItem('todos')
+        if (todos) setTodos(JSON.parse(todos))
+    },[])
+
+
+    useEffect(() => {
+        console.log('saving todos')
+        localStorage.setItem('todos', JSON.stringify(todos))
+    },[todos])
 
   const addTodo = todo => {
     setTodos([...todos, todo])
